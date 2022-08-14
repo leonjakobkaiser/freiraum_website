@@ -26,6 +26,9 @@
         font-family:  'Microsoft Uighur', 'Times New Roman', Times, serif;
         margin: 0;
       }
+      ul {
+        list-style-type: none;
+      }
 
       
       h1 {
@@ -135,19 +138,20 @@
 
       #band-foto {
         object-fit: contain;
-        width: 500px;
+        width: 600px;
         border-style: solid;
         border-width: 1px;
         border-color: #7a6656;
       }
 
       #musik {
-        
         display: none;
+        text-align: center;
+
       }
 
       .embedded-video {
-        width: 80%;
+        width: 60%;
         aspect-ratio: 16/9;
         margin-left: 10%;
         margin-right: 10%;
@@ -158,6 +162,7 @@
 
       #kontakt {
         display: none;
+        text-align: center;
       }
 
       @media screen and (max-width: 600px) {
@@ -176,10 +181,19 @@
         #band-foto {
           width: 90%;
         }
-
+    
+        .embedded-video {
+          width: 80%;
+        }
       }
 
 
+      @media screen and (min-width: 1500px) {
+        #band-foto {
+          width: 750px;
+        }
+
+      }
     </style>
 
     
@@ -235,10 +249,9 @@
     <main>
       <div id="info">
         <p id="info-text">
-          wir sind die Grazer Band "Freiraum". 2018 haben wir zu 4. - Martin (Bass), Fabi (Schlagzeug), Lukas (E-Gitarre), Leon (Gesang+Akustikgitarre) - angefangen Musik zu machen.
-          Wir haben an eigenen Liedern gearbeitet und uns ersten Studioaufnahmen und Proberaum-Mitschnitten gewidmet.
-          Auf Youtube kann man hören wie wir persönliche Emotionen und Geschichten in Text und Musik umsetzen:
- 
+          Die fünfköpfige Grazer Band Freiraum arbeitet seit 2018 an eigenen Liedern. In den deutschen Texten werden persönliche Geschichten abgehandelt,
+           wobei gesellschaftskritische Thematiken mit einfließen. Im DIY-Stil werden die Lieder von den ersten Akkorden bis zur Produktion von
+           den Bandmitgliedern selbst erarbeitet.
         </p>
         <hr>
         <br>
@@ -252,9 +265,9 @@
       </div>
       <div id="kontakt">
         <ul>
-          <li>email: </li>
-          <li>Ad</li>
+          <li>email: frei.raum.musiker@gmail.com</li>
           <li></li>
+
         </ul>
  
       </div>
