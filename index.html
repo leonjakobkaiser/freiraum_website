@@ -128,7 +128,7 @@
 
       }
 
-      #info-text {
+      .info-text {
         color: rgb(194, 194, 194);
         font-size: 28px;
         margin-left: 10%;
@@ -142,6 +142,18 @@
         border-style: solid;
         border-width: 1px;
         border-color: #7a6656;
+      }
+
+      #image-wrapper {
+        position: relative;
+        display: inline;
+      }
+
+      .image-copyright {
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+        font-size: 17px;
       }
 
       #musik {
@@ -165,18 +177,23 @@
         text-align: center;
       }
 
+      #mail-link {
+        font-size: 22px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
       @media screen and (max-width: 600px) {
         h1 {
           font-size: 12vw;
         }
         .nav-link {
-          font-size: 8vw;
+          font-size: 7vw;
         }
         #icons {
           min-width: 50vw;
         }
-        #info-text{
-          font-size: 6vw;
+        .info-text{
+          font-size: 5vw;
         }
         #band-foto {
           width: 90%;
@@ -184,6 +201,14 @@
     
         .embedded-video {
           width: 80%;
+        }
+
+        #mail-link {
+          font-size: 5vw;
+        }
+        
+        .image-copyright {
+          font-size: 3vw;
         }
       }
 
@@ -248,27 +273,32 @@
 
     <main>
       <div id="info">
-        <p id="info-text">
+        <p class="info-text">
           Die fünfköpfige Grazer Band Freiraum arbeitet seit 2018 an eigenen Liedern. In den deutschen Texten werden persönliche Geschichten abgehandelt,
-           wobei gesellschaftskritische Thematiken mit einfließen. Im DIY-Stil werden die Lieder von den ersten Akkorden bis zur Produktion von
-           den Bandmitgliedern selbst erarbeitet.
+          wobei gesellschaftskritische Thematiken mit einfließen. Im DIY-Stil werden die Lieder von den ersten Akkorden bis zur Produktion von
+          den Bandmitgliedern selbst erarbeitet.
         </p>
         <hr>
         <br>
         <br>
-        <img id="band-foto" src="figures/test_foto3.jpg" alt="schade">
+        <div id="image-wrapper">
+          <img id="band-foto" src="figures/test_foto3.jpg" alt="band-foto not loaded">
+          <p class="image-copyright">&copy Nicolae David</p>
+        </div>
 
       </div>
       <div id="musik">
         <iframe class="embedded-video" src="https://www.youtube.com/embed/8tyIdzlf2gI?autoplay=0&mute=0">
         </iframe>
+        <br>
+        <br>
+        <br>
+        <iframe class="embedded-video" src="https://www.youtube.com/embed/uuohi97fCJM?autoplay=0&mute=0">
+        </iframe>
       </div>
       <div id="kontakt">
-        <ul>
-          <li>email: frei.raum.musiker@gmail.com</li>
-          <li></li>
-
-        </ul>
+        <p class="info-text">Für Auftritts-Anfragen, Kooperationsideen oder sonstige Mitteilungen, schreibt uns eine Email oder kontaktiert uns über Social Media:</p>
+        <a id="mail-link" href="mailto:frei.raum.musiker@gmail.com">frei.raum.musiker@gmail.com</p>
  
       </div>
     </main>
