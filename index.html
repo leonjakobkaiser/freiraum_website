@@ -156,6 +156,22 @@
         font-size: 17px;
       }
 
+      #auftritte {
+        display: contents;
+      }
+
+      #auftritte-headline {
+        font-weight: bold;
+      }
+
+      .auftritt-section {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 10%;
+        border-style: solid;
+        border-width: 1px 0px;
+      }
+
       #musik {
         display: none;
         text-align: center;
@@ -177,14 +193,32 @@
         text-align: center;
       }
 
+
       #mail-link {
-        font-size: 22px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-size: 37px;
+        font-family: 'Microsoft Uighur', 'Times New Roman', Times, serif;
+        text-decoration: none;
+        color: rgb(194, 194, 194);
+        padding: 5px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: white;
+      }
+
+      #mail-link:hover {
+        text-decoration: underline;
+        transition: 0.1s;
+        color: #ffdcb5;
+        border-color: #ffdcb5;
+        border-width: 3px;
       }
 
       @media screen and (max-width: 600px) {
         h1 {
           font-size: 12vw;
+        }
+        p {
+          font-size: 5vw;
         }
         .nav-link {
           font-size: 7vw;
@@ -204,7 +238,7 @@
         }
 
         #mail-link {
-          font-size: 5vw;
+          font-size: 6vw;
         }
         
         .image-copyright {
@@ -286,25 +320,42 @@
           <p class="image-copyright">&copy Nicolae David</p>
         </div>
 
+        <br>
+        <br>
+        <br>
+        <div id="auftritte">
+          <hr>
+          <br>
+          <br>
+          <p id="auftritte-headline">Auftritte</p>
+          <div class="auftritt-section">
+            <p class="auftritt-date">29.10.2022</p>
+            <p class="auftritt-location">Graz - PPC</p>
+            <p class="auftritt-name"> Planet Festival Tour</p>
+          </div>
+          <div class="auftritt-section">
+            <p class="auftritt-date">5.11.2022</p>
+            <p class="auftritt-location">Graz - Music House</p>
+            <p class="auftritt-name"> mit MAYA.</p>
+          </div>       </div>
       </div>
       <div id="musik">
-        <iframe class="embedded-video" src="https://www.youtube.com/embed/8tyIdzlf2gI?autoplay=0&mute=0">
+        <iframe class="embedded-video" src="https://www.youtube.com/embed/5G_a3mqACLQ?autoplay=0&mute=0">
         </iframe>
         <br>
         <br>
         <br>
-        <iframe class="embedded-video" src="https://www.youtube.com/embed/uuohi97fCJM?autoplay=0&mute=0">
+        <iframe class="embedded-video" src="https://www.youtube.com/embed/8KE9-g26NUY?autoplay=0&mute=0">
         </iframe>
       </div>
       <div id="kontakt">
-        <p class="info-text">Für Auftritts-Anfragen, Kooperationsideen oder sonstige Mitteilungen, schreibt uns eine Email oder kontaktiert uns über Social Media:</p>
-        <a id="mail-link" href="mailto:frei.raum.musiker@gmail.com">frei.raum.musiker@gmail.com</p>
- 
+        <p class="info-text">Für Tickets, Auftritts-Anfragen, Kooperationsideen oder sonstige Mitteilungen, schreibt uns eine Email oder kontaktiert uns über Social Media:</p>
+        <a id="mail-link" href="mailto:frei.raum.musiker@gmail.com">frei.raum.musiker@gmail.com</a>
       </div>
     </main>
   </body>
 
-  <script>
+  <script >
     var infoElement = document.getElementById("info");
     var musikElement = document.getElementById("musik");
     var kontaktElement = document.getElementById("kontakt");
@@ -325,5 +376,24 @@
       musikElement.style.display = "none";
       kontaktElement.style.display = "block";
     }
+    console.log("Ha")
+
+
+
+    var today = new Date();
+    const gigs = document.querySelectorAll('.auftritt-section');
+
+    for (let i = 0; i < gigs.length; i++) {
+      gig_dates_elem = gigs[i].firstElementChild;
+      let gig_date_numbers = gig_dates_elem.innerHTML.split('.');
+      let next_gig_date = new Date(gig_date_numbers[2], gig_date_numbers[1]-1, gig_date_numbers[0],24); 
+     
+      if (next_gig_date<today) {
+
+        gigs[i].style.display = "none";
+      } 
+    }
+    console.log(today);
+
   </script>
 </html>
