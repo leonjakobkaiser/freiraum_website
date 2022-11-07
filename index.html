@@ -344,7 +344,9 @@
             <p class="auftritt-date">5.11.2022</p>
             <p class="auftritt-location">Graz - Music House</p>
             <p class="auftritt-name"> mit MAYA.</p>
-          </div>       </div>
+          </div>
+          <p id="auftritt-tba" style="display: none;">tba</p>
+        </div>
       </div>
       <div id="musik">
         <iframe class="embedded-video" src="https://www.youtube.com/embed/5G_a3mqACLQ?autoplay=0&mute=0">
@@ -396,18 +398,22 @@
 
     var today = new Date();
     const gigs = document.querySelectorAll('.auftritt-section');
-
+    let no_gigs = true;
     for (let i = 0; i < gigs.length; i++) {
       gig_dates_elem = gigs[i].firstElementChild;
       let gig_date_numbers = gig_dates_elem.innerHTML.split('.');
       let next_gig_date = new Date(gig_date_numbers[2], gig_date_numbers[1]-1, gig_date_numbers[0],24); 
      
       if (next_gig_date<today) {
-
         gigs[i].style.display = "none";
-      } 
+      } else {
+        no_gigs = false;
+      }
     }
-    console.log(today);
+    const gig_tba = document.getElementById('auftritt-tba');
+    if (no_gigs) {
+      gig_tba.style.display = 'block';
+    }
 
   </script>
 </html>
